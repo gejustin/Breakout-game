@@ -1,4 +1,4 @@
-﻿define(['app/objects/ball', 'app/objects/brick', 'app/objects/paddle', 'app/tools/gameStatus'], function(Ball, Brick, Paddle, GameStatus) {
+﻿define(['app/objects/ball', 'app/objects/brick', 'app/objects/paddle', 'app/tools/gameStatus', 'app/objects/level'], function(Ball, Brick, Paddle, GameStatus, Level) {
     var Game = function() {
         this.entities = {};
     };
@@ -19,6 +19,8 @@
             init = function(canvas) {
                 setAnimFrame();
                 this.canvas = document.getElementById(canvas);
+                this.canvas.width = window.innerWidth * 0.53333333333333333333333333333333;
+                this.canvas.height = window.innerHeight * 0.71111111111111111111111111111111;
                 this.canvas.boundary = {
                     right: this.canvas.width,
                     left: 0,
@@ -27,16 +29,9 @@
                 };
                 this.ctx = this.canvas.getContext('2d');
 
-                // Most of this will be replaced when a level system is implemented
-                this.entities.ball = new Ball(this.canvas.width / 2, 550, 7, 11, '#3B3C42', 'black');
-                this.entities.player = new Paddle(this.canvas.width / 2 - 55, 730, 110, 15, 11, '#3B3C42', 'black');
-                this.entities.bricks = [];
-                for (var i = 0; i < 14; i++) {
-                    for (var j = 0; j < 5; j++) {
-                        this.entities.bricks.push(new Brick(i * 64 + 64, j * 64 + 64, 62, 15, '#3B3C42', 'black'));
-                    }
+                this.entities.level = new Level();
+                this.entities.level.init.call(this);
 
-                }
                 this.status = GameStatus.PLAYING;
                 this.run();
             },

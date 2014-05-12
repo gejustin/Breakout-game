@@ -1,7 +1,7 @@
 ﻿define([], function() {
-    var Paddle = function(x, y, width, height, velocity, fillColor, strokeColor) {
-        this.X = x;
-        this.Y = y;
+    var Paddle = function(canvas, width, height, velocity, fillColor, strokeColor) {
+        this.X = canvas.width/2 - width/2;
+        this.Y = canvas.height - height;
         this.height = height;
         this.width = width;
         this.velocity = velocity;

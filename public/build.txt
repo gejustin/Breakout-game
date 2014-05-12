@@ -12,5 +12,6 @@ js/app/tools/collisions.js
 js/app/objects/ball.js
 js/app/objects/brick.js
 js/app/objects/paddle.js
+js/app/objects/level.js
 js/app/game.js
 js/main.js
