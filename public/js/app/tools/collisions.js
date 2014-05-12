@@ -1,18 +1,1 @@
-﻿define(['app/tools/maths'], function(Maths) {
-    var Collisions = {
-        hitBottom: function(ball, rectangle) {
-            return Maths.intersection(ball, rectangle.boundary.bottom, 'Y') && (ball.boundary.right >= rectangle.boundary.left && ball.boundary.left <= rectangle.boundary.right);
-        },
-        hitTop: function(ball, rectangle) {
-            return Maths.intersection(ball, rectangle.boundary.top, 'Y') && (ball.boundary.right >= rectangle.boundary.left && ball.boundary.left <= rectangle.boundary.right);
-        },
-        hitLeft: function(ball, rectangle) {
-            return Maths.intersection(ball, rectangle.boundary.left, 'X') && (ball.boundary.top <= rectangle.boundary.bottom && ball.boundary.bottom >= rectangle.boundary.top);
-        },
-        hitRight: function(ball, rectangle) {
-            return Maths.intersection(ball, rectangle.boundary.right, 'X') && (ball.boundary.top <= rectangle.boundary.bottom && ball.boundary.bottom >= rectangle.boundary.top);
-        }
-    };
-
-    return Collisions;
-});
+define(["app/tools/maths"],function(e){var t={hitBottom:function(t,n){return e.intersection(t,n.boundary.bottom,"Y")&&t.boundary.right>=n.boundary.left&&t.boundary.left<=n.boundary.right},hitTop:function(t,n){return e.intersection(t,n.boundary.top,"Y")&&t.boundary.right>=n.boundary.left&&t.boundary.left<=n.boundary.right},hitLeft:function(t,n){return e.intersection(t,n.boundary.left,"X")&&t.boundary.top<=n.boundary.bottom&&t.boundary.bottom>=n.boundary.top},hitRight:function(t,n){return e.intersection(t,n.boundary.right,"X")&&t.boundary.top<=n.boundary.bottom&&t.boundary.bottom>=n.boundary.top}};return t});
