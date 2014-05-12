@@ -2,6 +2,7 @@ html {
     overflow: hidden;
 }
 #canvas {
+    margin: 0 23.333333333333333333333333333334%;
     border: 1px solid #333;
     border-bottom: none;
 }
